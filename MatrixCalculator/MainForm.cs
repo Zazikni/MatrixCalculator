@@ -318,11 +318,11 @@ namespace MatrixCalculator
                 {
                     Stopwatch stopwatch = Stopwatch.StartNew();
                     Matrix resultMatrix = Matrix.MultiplyMatrixSequential(firstMatrix, secondMatrix);
-                    labelMatrixResultSeq.Text = $"Время пар: {stopwatch.ElapsedMilliseconds} ms";
+                    labelMatrixResultSeq.Text = $"Время пос: {stopwatch.ElapsedMilliseconds} ms";
                     InsertMatrix(textBoxMatrix: matrixInputsResult, resultMatrix: resultMatrix);
                     stopwatch.Restart();
                     Matrix.MultiplyParallelWithTasks(firstMatrix, secondMatrix, Environment.ProcessorCount);
-                    labelMatrixResultPar.Text = $"Время пос: {stopwatch.ElapsedMilliseconds} ms";
+                    labelMatrixResultPar.Text = $"Время пар: {stopwatch.ElapsedMilliseconds} ms";
                     stopwatch.Stop();
 
                 }
